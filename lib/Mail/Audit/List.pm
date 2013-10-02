@@ -1,12 +1,14 @@
-package Mail::Audit::List;
-use Mail::Audit;
-use vars q(@VERSION);
-$VERSION = '1.852';
-1;
-
-package Mail::Audit;
-
 use strict;
+package Mail::Audit::List;
+{
+  $Mail::Audit::List::VERSION = '1.853';
+}
+# ABSTRACT: Mail::Audit plugin for automatic list delivery
+use Mail::Audit 2.217;
+
+package
+  Mail::Audit;
+
 use Mail::ListDetector;
 my $DEFAULT_DIR = $ENV{HOME} . "/mail";
 
@@ -32,6 +34,7 @@ sub list_accept {
 }
 
 1;
+
 __END__
 
 =pod
@@ -39,6 +42,10 @@ __END__
 =head1 NAME
 
 Mail::Audit::List - Mail::Audit plugin for automatic list delivery
+
+=head1 VERSION
+
+version 1.853
 
 =head1 SYNOPSIS
 
@@ -84,10 +91,19 @@ special-casing recipes.
 
 =back
 
+=head1 SEE ALSO
+
+L<Mail::Audit>
+
 =head1 AUTHOR
 
 Michael Stevens <michael@etla.org>
 
-=head1 SEE ALSO
+=head1 COPYRIGHT AND LICENSE
 
-L<Mail::Audit>
+This software is copyright (c) 2003 by Michael Stevens.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
